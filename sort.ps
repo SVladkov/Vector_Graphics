@@ -1,0 +1,63 @@
+/sort2numbers {
+  2 copy gt {
+    exch
+  } if
+} def
+
+mark [1 4] [5 3] [64 23] [64 22] [64 1] [1 3] [5 5]
+
+/sort2arrays {
+  1 index aload pop
+  2 index aload pop
+  3 index
+  2 index
+  gt {
+    pop pop pop pop exch
+  } {
+    3 index
+    2 index
+    eq {
+      2 index
+      1 index
+      gt {
+	pop pop pop pop exch
+      } {
+	pop pop pop pop
+      } ifelse
+    } { pop pop pop pop   
+    } ifelse
+  } ifelse
+} def
+
+/sort2arraysTeacher {
+  2 copy
+  aload pop 3 -1 roll aload pop
+  exch 4 -1 roll
+  2 copy eq {
+    pop pop exch
+  } {
+    4 2 roll pop pop
+  } ifelse
+  gt { exch } if
+} def
+
+/findmin {
+  counttomark -1 2 {
+    3 1 roll
+    sort2arrays
+    3 -1 roll
+    1 roll
+  } for
+} def
+
+/sort {
+  counttomark
+  dup 1 gt {
+    mark exch 1 add 1 roll
+    counttomark 1 sub {
+      findmin
+      counttomark 1 add 1 roll
+    } repeat
+    exch pop
+  } if
+} def
