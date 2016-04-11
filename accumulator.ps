@@ -1,0 +1,25 @@
+/accgen {
+  { /? /? 3 -1 roll add dup 3 1 roll 1 exch put }
+  dup length array copy 
+  dup dup 0 exch put
+  dup 1 4 -1 roll put
+  cvx
+} def
+
+/dsd {
+  { /? /? 3 -1 roll add dup 3 1 roll 1 exch put }
+  dup length array copy
+  dup dup 0 exch put
+  dup 1 4 -1 roll put
+  cvx
+} def
+
+/a1 10 accgen def
+
+/p {
+  pstack
+} def
+
+/d 
+  10 dsd
+ def

@@ -1,0 +1,52 @@
+% R D d n
+11 1 2 30
+
+/b {
+  /n
+    exch
+  def
+  
+  /d
+    exch
+  def
+  
+  /D
+    exch
+  def
+  
+  /R
+    exch
+  def
+  
+  /sinAngle
+    360 n div sin
+  def
+  
+  /ballRadius
+    R D sub sinAngle mul 1 sinAngle sub div
+  def
+  
+  /turn
+    360 n div 2 mul
+  def
+
+  %200 200 ballRadius 0 360 arc closepath
+   %     stroke
+  
+  200 200 moveto
+  
+  n
+  {
+    newpath
+      ballRadius ballRadius rmoveto
+      ballRadius ballRadius rlineto
+      2 setlinewidth
+    stroke
+  } repeat
+} def
+
+b
+
+/p {
+  pstack
+} def
