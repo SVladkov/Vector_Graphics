@@ -1,0 +1,22 @@
+/horizontals
+{ newpath
+-400 4 15 48 mul { %for
+	/i exch def
+	-300 i moveto
+	500 i 400 add lineto
+} for stroke
+} def
+
+/trianglepath
+{ newpath
+-100 0 moveto
+244 -100 lineto
+72 400 lineto
+closepath } def
+101
+
+% ---- Begin Program ---
+230 300 translate
+trianglepath clip %set clipping path
+horizontals
+showpage
